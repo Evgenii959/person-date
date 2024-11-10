@@ -1,6 +1,6 @@
 <template>
-  <div class="personal">
-    <h1 class="personal__title">Персональные данные</h1>
+  <div class="main">
+    <h1 class="main__title">Персональные данные</h1>
     <UserForm :cards="cards" />
     <PersonalList :cards="cards" />
   </div>
@@ -22,7 +22,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-.personal {
+.main {
   max-width: 616px;
   width: 100%;
   margin: 30px auto 136px;

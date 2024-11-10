@@ -1,21 +1,21 @@
 <template>
-  <ul v-if="cards.length > 0" class="card">
-    <li v-for="(card, index) in props.cards" :key="index" class="card__item">
-      <div class="card__block">
-        <label class="card__label">Имя</label>
-        <p class="card__name">{{ card.name }}</p>
+  <ul v-if="cards.length > 0" class="personal">
+    <li v-for="(card, index) in props.cards" :key="index" class="personal__item">
+      <div class="personal__block">
+        <label class="personal__label">Имя</label>
+        <p class="personal__name">{{ card.name }}</p>
       </div>
-      <div class="card__block">
-        <label class="card__label">Возраст</label>
-        <p class="card__name">{{ card.age }}</p>
+      <div class="personal__block">
+        <label class="personal__label">Возраст</label>
+        <p class="personal__name">{{ card.age }}</p>
       </div>
-      <button @click="removeCard(index)" class="card__delete">Удалить</button>
+      <button @click="removeCard(index)" class="personal__delete">Удалить</button>
     </li>
   </ul>
   <button
     v-if="cards.length > 0"
     @click="saveData"
-    class="card__save"
+    class="personal__save"
   >
     Сохранить
   </button>
@@ -44,7 +44,7 @@ const removeCard = (index) => {
 </script>
 
 <style lang="scss" scoped>
-.card {
+.personal {
   padding: 0;
   display: flex;
   flex-direction: column;

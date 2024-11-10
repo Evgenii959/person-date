@@ -55,7 +55,7 @@ const addCard = () => {
 };
 </script>
 
-<style lang='scss'coped>
+<style lang="scss" scoped>
 .form {
   display: flex;
   flex-direction: column;
