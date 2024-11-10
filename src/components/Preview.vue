@@ -1,28 +1,79 @@
 <template>
-  <div>
-    <h2>Превью</h2>
+  <div class="preview">
     <div>
-      <h3>Пользователь</h3>
-      <p>ФИО: {{ user.fullName }}</p>
-      <p>Возраст: {{ user.age }}</p>
-
-      <h3>Дети</h3>
-      <ul>
-        <li v-for="(child, index) in children" :key="index">
-          {{ child.name }} - {{ child.age }} лет
+      <h2 class="preview__title">Персональные данные</h2>
+      <p class="preview__name">Василий, 30 лет</p>
+    </div>
+    <div>
+      <h3 class="preview__title">Дети</h3>
+      <ul class="preview__list">
+        <li
+          v-for="(card, index) in savedCards"
+          :key="index"
+          class="preview__item"
+        >
+          {{ card.name }}, {{ card.age }} лет
         </li>
       </ul>
     </div>
   </div>
 </template>
 
-
 <script setup>
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref, onMounted } from 'vue';
 
-const route = useRoute();
+const savedCards = ref([]);
 
-const user = computed(() => JSON.parse(route.query.user || '{}'));
-const children = computed(() => JSON.parse(route.query.children || '[]'));
+onMounted(() => {
+  const saved = localStorage.getItem('savedCards');
+  if (saved) {
+    savedCards.value = JSON.parse(saved);
+  }
+});
 </script>
+
+<style scoped>
+.preview {
+  max-width: 616px;
+  width: 100%;
+  margin: 30px auto 136px;
+}
+
+.preview__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  margin: 0
+}
+
+.preview__name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  margin: 20px 0 60px;
+}
+
+.preview__list {
+  display: inline-block;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.preview__item {
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.preview__item:last-child {
+  margin: 0;
+}
+</style>

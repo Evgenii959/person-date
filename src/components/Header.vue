@@ -2,17 +2,10 @@
   <header class="header">
     <div class="header__wrapper">
       <img class="header__logo" src="../assets/images/logo.svg" alt="Логотип" />
-      <nav>
-        <ul class="header__nav">
-          <li>
-            <router-link class="header__link" to="/form">Форма</router-link>
-          </li>
-          <li>
-            <router-link class="header__link" to="/preview">Превью</router-link>
-          </li>
-        </ul>
+      <nav class="header__nav-wrapper">
+        <router-link class="header__link" to="/">Форма</router-link>
+        <router-link class="header__link" to="/preview">Превью</router-link>
       </nav>
-      <div></div>
     </div>
   </header>
 </template>
@@ -30,7 +23,7 @@
 
 .header__wrapper {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 93px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,13 +33,13 @@
   height: 29px;
 }
 
-.header__nav {
+.header__nav-wrapper {
+  flex-grow: 1;
   display: flex;
-  gap: 24px;
-}
-
-li {
-  list-style: none;
+  justify-content: center;
+    gap: 24px;
+  padding: 0;
+  margin: 0;
 }
 
 .header__link {
@@ -57,7 +50,7 @@ li {
   text-decoration: none;
 }
 
-.header__link::hover {
-  opacity: 0.2;
+.header__link:hover {
+  opacity: 0.7;
 }
 </style>
