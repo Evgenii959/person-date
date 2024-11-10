@@ -24,6 +24,7 @@
       <div class="personal__button-wrapper">
         <label class="personal__button-text">Дети (макс. 5)</label>
         <button
+          v-if="cards.length < 5"
           type="submit"
           :disabled="!newCard.name || !newCard.age"
           class="personal__button"
@@ -51,8 +52,6 @@
     <button
       v-if="cards.length > 0"
       @click="saveData"
-      :disabled="cards.length < 1 || cards.length > 5"
-      :class="{'personal__save-button_disabled': cards.length >= 5}"
       class="personal__save-button"
     >
       Сохранить
@@ -227,10 +226,5 @@ onMounted(() => {
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-}
-
-
-.personal__save-button_disabled {
-  background-color: #d3d3d3;
 }
 </style>
