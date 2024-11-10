@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import './assets/style.css';
+import './assets/styles.scss';
 import App from './App.vue';
 import router from './router';
 

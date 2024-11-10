@@ -44,7 +44,7 @@
           <label class="personal__card-label">Возраст</label>
           <p class="personal__name">{{ card.age }}</p>
         </div>
-        <button @click="removeCard(index)" class="personal__delete-button">
+        <button @click="removeCard(index)" class="personal__button-delete">
           Удалить
         </button>
       </li>
@@ -52,7 +52,7 @@
     <button
       v-if="cards.length > 0"
       @click="saveData"
-      class="personal__save-button"
+      class="personal__button-save"
     >
       Сохранить
     </button>
@@ -92,139 +92,141 @@ onMounted(() => {
 });
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .personal {
   max-width: 616px;
   width: 100%;
   margin: 30px auto 136px;
-}
 
-.personal__title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #111111;
-  margin: 0 0 20px;
-}
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    margin: 0 0 20px;
+  }
 
-.personal__form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-.personal__input {
-  font-family: Montserrat, Arial, sans-serif;
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #f1f1f1;
-  border-radius: 4px;
-  padding: 29px 16px 9px;
-  background-color: transparent;
-}
+  &__input {
+    font-family: Montserrat, Arial, sans-serif;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    padding: 29px 16px 9px;
+    background-color: transparent;
+    &::placeholder {
+      font-size: 14px;
+      color: #111111;
+    }
+  }
 
-.personal__input::placeholder {
-  font-size: 14px;
-  color: #111111;
-}
+  &__label {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 16px;
+    font-size: 13px;
+    color: rgba(17, 17, 17, 0.48);
+    margin-bottom: -20px;
+  }
 
-.personal__label {
-  position: absolute;
-  margin-top: 8px;
-  margin-left: 16px;
-  font-size: 13px;
-  color: rgba(17, 17, 17, 0.48);
-  margin-bottom: -20px;
-}
+  &__button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 23px;
+  }
 
-.personal__button-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 23px;
-}
+  &__button {
+    font-family: Montserrat, Arial, sans-serif;
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #01a7fd;
+    background-color: transparent;
+    border: 2px solid #01a7fd;
+    border-radius: 100px;
+    padding: 8px 18px;
+    cursor: pointer;
+    margin: 0;
+    &:hover {
+      opacity: 0.7;
+    }
+    &-text {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin: 0;
+    }
+    &-delete {
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      color: #01a7fd;
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    &-save {
+      font-family: Montserrat, Arial, sans-serif;
+      padding: 14px 22px;
+      background-color: #01a7fd;
+      border-radius: 100px;
+      border: 0;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 
-.personal__button-text {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #111111;
-  margin: 0;
-}
+  &__list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 11px 0 30px;
+  }
 
-.personal__button {
-  font-family: Montserrat, Arial, sans-serif;
-  display: flex;
-  gap: 4px;
-  font-size: 14px;
-  line-height: 24px;
-  color: #01a7fd;
-  background-color: transparent;
-  border: 2px solid #01a7fd;
-  border-radius: 100px;
-  padding: 8px 18px;
-  margin-left: 4px;
-  cursor: pointer;
-  margin: 0;
-}
+  &__card {
+    display: flex;
+    gap: 18px;
+    &-block {
+      padding: 4px 17px;
+      border: 1px solid #f1f1f1;
+      width: 100%;
+    }
+    &-label {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: rgba(17, 17, 17, 0.48);
+    }
+  }
 
-.personal__card {
-  display: flex;
-  gap: 18px;
-}
-
-.personal__list {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 11px 0 30px;
-}
-
-.personal__card-block {
-  padding: 4px 17px;
-  border: 1px solid #f1f1f1;
-  width: 100%;
-}
-
-.personal__card-label {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
-  color: rgba(17, 17, 17, 0.48);
-}
-
-.personal__name {
-  margin: 2px 0 0;
-  height: 24px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: #111111;
-}
-
-.personal__delete-button {
-  font-family: Montserrat, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: #01a7fd;
-  padding: 0;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
-.personal__save-button {
-  font-family: Montserrat, Arial, sans-serif;
-  padding: 14px 22px;
-  background-color: #01a7fd;
-  border-radius: 100px;
-  border: 0;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #ffffff;
-  cursor: pointer;
+  &__name {
+    margin: 2px 0 0;
+    height: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #111111;
+  }
 }
 </style>

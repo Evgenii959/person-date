@@ -32,48 +32,47 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .preview {
   max-width: 616px;
   width: 100%;
   margin: 30px auto 136px;
-}
 
-.preview__title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #111111;
-  margin: 0
-}
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    margin: 0;
+  }
 
-.preview__name {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: #111111;
-  margin: 20px 0 60px;
-}
+  &__name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    margin: 20px 0 60px;
+  }
 
-.preview__list {
-  display: inline-block;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0;
-}
+  &__list {
+    display: inline-block;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+  }
 
-.preview__item {
-  padding: 10px 20px;
-  background-color: #f1f1f1;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: #000000;
-  margin-bottom: 20px;
-}
-
-.preview__item:last-child {
-  margin: 0;
+  &__item {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+    &:last-child {
+      margin: 0;
+    }
+  }
 }
 </style>
