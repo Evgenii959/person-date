@@ -60,7 +60,6 @@ const addCard = () => {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   &__input {
     font-family: Montserrat, Arial, sans-serif;
     position: relative;
@@ -75,7 +74,6 @@ const addCard = () => {
       color: #111111;
     }
   }
-
   &__label {
     position: absolute;
     margin-top: 8px;
@@ -84,14 +82,12 @@ const addCard = () => {
     color: rgba(17, 17, 17, 0.48);
     margin-bottom: -20px;
   }
-
   &__button-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 23px;
   }
-
   &__button {
     font-family: Montserrat, Arial, sans-serif;
     display: flex;

@@ -37,7 +37,6 @@ onMounted(() => {
   max-width: 616px;
   width: 100%;
   margin: 30px auto 136px;
-
   &__title {
     font-weight: 500;
     font-size: 16px;
@@ -45,7 +44,6 @@ onMounted(() => {
     color: #111111;
     margin: 0;
   }
-
   &__name {
     font-weight: 700;
     font-size: 16px;
@@ -53,7 +51,6 @@ onMounted(() => {
     color: #111111;
     margin: 20px 0 60px;
   }
-
   &__list {
     display: inline-block;
     flex-direction: column;
@@ -61,7 +58,6 @@ onMounted(() => {
     padding: 0;
     margin: 20px 0 0;
   }
-
   &__item {
     padding: 10px 20px;
     background-color: #f1f1f1;

@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   &__text {
     font-weight: 400;
     font-size: 13px;

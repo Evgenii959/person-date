@@ -26,7 +26,6 @@ onMounted(() => {
   max-width: 616px;
   width: 100%;
   margin: 30px auto 136px;
-
   &__title {
     font-weight: 500;
     font-size: 16px;
