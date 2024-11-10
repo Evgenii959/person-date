@@ -1,7 +1,7 @@
 <template>
-  <UserForm />
+  <Main />
 </template>
 
 <script setup>
-import UserForm from '../components/UserForm.vue';
+import Main from '../components/Main.vue';
 </script>
