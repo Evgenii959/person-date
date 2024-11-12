@@ -82,6 +82,7 @@ const removeCard = (index) => {
     background-color: transparent;
     border: 0;
     cursor: pointer;
+    transition: opacity 0.7s ease;
     &:hover {
       opacity: 0.7;
     }
@@ -97,6 +98,7 @@ const removeCard = (index) => {
     text-align: center;
     color: #ffffff;
     cursor: pointer;
+    transition: opacity 0.7s ease;
     &:hover {
       opacity: 0.7;
     }

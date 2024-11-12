@@ -43,6 +43,7 @@
     line-height: 24px;
     color: rgba(17, 17, 17, 0.48);
     text-decoration: none;
+    transition: opacity 0.7s ease;
     &:hover {
       opacity: 0.7;
     }

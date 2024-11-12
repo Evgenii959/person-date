@@ -101,6 +101,7 @@ const addCard = () => {
     padding: 8px 18px;
     cursor: pointer;
     margin: 0;
+    transition: opacity 0.7s ease;
     &:hover {
       opacity: 0.7;
     }
