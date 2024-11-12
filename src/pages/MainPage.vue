@@ -8,8 +8,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import PersonalList from './PersonalList.vue';
-import UserForm from './UserForm.vue';
+import PersonalList from '../components/PersonalList.vue';
+import UserForm from '../components/UserForm.vue';
 
 const cards = ref([]);
 

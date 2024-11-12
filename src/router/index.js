@@ -1,22 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
-import PreviewPage from '../views/PreviewPage.vue';
+import MainPage from '../pages/MainPage.vue';
+import PreviewPage from '../pages/PreviewPage.vue';
+import NotFound from '../pages/404.vue';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: MainPage,
   },
   {
     path: '/preview',
     name: 'preview',
     component: PreviewPage,
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'notFound',
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory('/person-date'),
+  history: createWebHistory('/person-date/'),
   routes,
 });
 
